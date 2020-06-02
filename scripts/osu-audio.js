@@ -93,7 +93,7 @@ define([], function() {
         console.log("set start offset to", this.posoffset, "ms");
         console.log("you've set global offset to", game.globalOffset || 0, "ms");
         this.posoffset += game.globalOffset || 0;
-
+        if (this.audio.state === 'suspended' && 'ontouchstart' in window) { var unlock = function() { self.audio.resume(); }; document.body.addEventListener('touchstart', unlock, false); }
         function decode(node) {
             self.audio.decodeAudioData(node.buf, function(decoded) {
                 self.decoded = decoded;
