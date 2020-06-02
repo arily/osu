@@ -1,5 +1,4 @@
 // beatmap downloader
-
 (() => {
 
     /**
@@ -133,7 +132,6 @@
         previewAudioMgr.volume = volume
         previewAudioMgr.play(box.sid)
     }
-
     function startdownload(box) {
         startpreview(box);
         if (box.downloading) {
